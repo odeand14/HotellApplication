@@ -1,0 +1,26 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="no.westerdals.odeand.hotellapplication.HotellInfoFragment"
+    >
+
+    <TextView
+        android:textAppearance="@style/Theme.AppCompat.Light"
+        android:shadowColor="@color/colorAccent"
+        android:layout_marginTop="100sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/filler_text"
+        android:textSize="@dimen/text_margin"
+     />
+
+    <com.google.android.gms.maps.MapView
+        android:id="@+id/map_view"
+        android:layout_width="match_parent"
+        android:layout_height="300sp"
+        android:layout_gravity="bottom"
+        >
+    </com.google.android.gms.maps.MapView>
+
+</FrameLayout>

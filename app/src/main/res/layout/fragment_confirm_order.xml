@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:layout_marginTop="100sp"
+        android:layout_width="match_parent"
+        android:layout_height="200sp"
+        android:id="@+id/guest_info"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/guest_info"
+        android:id="@+id/time_number_layout">
+
+        <EditText
+            android:id="@+id/edit_confirm_number_passengers"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:inputType="number"
+            android:hint="@string/passenger_number"
+            android:layout_weight="1"
+            android:textAlignment="center"
+            />
+
+        <EditText
+            android:id="@+id/edit_confirm_time"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:inputType="datetime"
+            android:hint="@string/departure_time"
+            android:layout_weight="1"
+            android:textAlignment="center"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="50sp"
+        android:layout_gravity="bottom"
+        android:layout_alignParentBottom="true"
+        >
+
+        <Button
+            android:id="@+id/button_confirm_order"
+            android:hint="@string/order_taxi"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="20sp"
+            android:layout_weight="1"
+            style="?android:attr/buttonBarButtonStyle"
+            />
+        <Button
+            android:id="@+id/button_confirm_cancel"
+            android:hint="@string/cancel_order"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="20sp"
+            android:layout_weight="1"
+            style="?android:attr/buttonBarButtonStyle"
+            />
+
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>
