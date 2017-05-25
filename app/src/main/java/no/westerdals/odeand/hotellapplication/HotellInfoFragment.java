@@ -1,7 +1,6 @@
 package no.westerdals.odeand.hotellapplication;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -108,9 +107,5 @@ public class HotellInfoFragment extends Fragment {
         return true;
     }
 
-    public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
-        void onFragmentInteraction(Uri uri);
-    }
 
 }

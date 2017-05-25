@@ -5,17 +5,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import java.util.List;
-import no.westerdals.odeand.hotellapplication.dummy.DummyContent.DummyItem;
 
-/**
- * {@link RecyclerView.Adapter} that can display a {@link DummyItem} and makes a call to the
- * specified {@link AllGuestsFragment.OnListFragmentInteractionListener}.
- * TODO: Replace the implementation with code for your data type.
- */
+import java.util.List;
+
+
 public class MyGuestRecyclerViewAdapter extends RecyclerView.Adapter<MyGuestRecyclerViewAdapter.ViewHolder> {
 
-//    private final List<DummyItem> mValues;
     private final List<Guest> mValues;
 
     public MyGuestRecyclerViewAdapter(List<Guest> guests) {

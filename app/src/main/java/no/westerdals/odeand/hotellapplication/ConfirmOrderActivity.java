@@ -10,4 +10,5 @@ public class ConfirmOrderActivity extends SingleFragmentActivity {
     protected Fragment createFragment() {
         return new ConfirmOrderFragment();
     }
+
 }

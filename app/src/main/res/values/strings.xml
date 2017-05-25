@@ -14,14 +14,14 @@
     <string name="new_guest">New Guest</string>
     <string name="taxi_mail_header">TAXI mail:</string>
 
-    <string name="title_activity_main">TAXI order</string>
+    <string name="title_activity_main">TAXI booker</string>
     <string name="order_taxi">Order Taxi</string>
     <string name="cancel_order">Cancel Order</string>
     <string name="passenger_number">Number of passengers</string>
     <string name="departure_time">Departure time</string>
     <string name="hotel_info">Hotel info</string>
     <string name="all_guests">All guests</string>
-    <string name="filler_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
+    <string name="filler_text">Andys Hotel.\n\nWelcome to Andys Hotel!\nThe Utmost experience of luxury and state of the art taxi services.\n\nThe hotel is located in a secluded location in Oslos westside, and can offer you food and beverages. Not to mention rooms at an expensive price.\n\nAddress: Gabels gate 16, 0272 Oslo\n\nNumber of rooms: 114 rooms – 173 beds\n\nNumber of meeting rooms: 5 – for up to 100 people</string>
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="guest_name">Guest name</string>
