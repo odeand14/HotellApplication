@@ -7,8 +7,9 @@
 
     <TextView
         android:textAppearance="@style/Theme.AppCompat.Light"
-        android:shadowColor="@color/colorAccent"
         android:layout_alignParentTop="true"
+        android:layout_alignTop="@+id/map_view"
+        android:scrollbarTrackVertical="@color/colorAccent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/filler_text"

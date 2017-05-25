@@ -23,13 +23,8 @@ public class Guest implements Serializable {
 
     @Override
     public String toString() {
-        return "Guest{" +
-                "name='" + name + '\'' +
-                ", email='" + email + '\'' +
-                ", id=" + id +
-                ", phoneNumber=" + phoneNumber +
-                ", roomNumber=" + roomNumber +
-                '}';
+        return "Name: " + name + "\nEmail: " + email + "\nPhone Number: " + phoneNumber +
+                "\nRoomNumber: " + roomNumber;
     }
 
     @Override

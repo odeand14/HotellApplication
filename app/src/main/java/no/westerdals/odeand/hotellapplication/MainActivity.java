@@ -93,8 +93,10 @@ public class MainActivity extends AppCompatActivity implements
 
     }
 
-    @Override
-    public void onListFragmentInteraction(DummyContent.DummyItem item) {
 
-    }
+
+     @Override
+     public void onListFragmentInteraction(Guest item) {
+
+     }
 }

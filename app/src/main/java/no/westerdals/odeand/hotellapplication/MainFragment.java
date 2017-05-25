@@ -53,7 +53,6 @@ public class MainFragment extends Fragment {
         btnSubmit = (Button) view.findViewById(R.id.btnSubmitRoomNumber);
         txtRoomNr = (TextView) view.findViewById(R.id.txtRoomNumber);
 
-
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

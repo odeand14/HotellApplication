@@ -15,12 +15,11 @@ import no.westerdals.odeand.hotellapplication.dummy.DummyContent.DummyItem;
  */
 public class MyGuestRecyclerViewAdapter extends RecyclerView.Adapter<MyGuestRecyclerViewAdapter.ViewHolder> {
 
-    private final List<DummyItem> mValues;
-    private final AllGuestsFragment.OnListFragmentInteractionListener mListener;
+//    private final List<DummyItem> mValues;
+    private final List<Guest> mValues;
 
-    public MyGuestRecyclerViewAdapter(List<DummyItem> items, AllGuestsFragment.OnListFragmentInteractionListener listener) {
-        mValues = items;
-        mListener = listener;
+    public MyGuestRecyclerViewAdapter(List<Guest> guests) {
+        mValues = guests;
     }
 
     @Override
@@ -33,19 +32,9 @@ public class MyGuestRecyclerViewAdapter extends RecyclerView.Adapter<MyGuestRecy
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.mItem = mValues.get(position);
-        holder.mIdView.setText(mValues.get(position).id);
-        holder.mContentView.setText(mValues.get(position).content);
+        holder.mIdView.setText((String.valueOf(mValues.get(position).getRoomNumber())));
+        holder.mContentView.setText(mValues.get(position).toString());
 
-        holder.mView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (null != mListener) {
-                    // Notify the active callbacks interface (the activity, if the
-                    // fragment is attached to one) that an item has been selected.
-                    mListener.onListFragmentInteraction(holder.mItem);
-                }
-            }
-        });
     }
 
     @Override
@@ -57,7 +46,7 @@ public class MyGuestRecyclerViewAdapter extends RecyclerView.Adapter<MyGuestRecy
         public final View mView;
         public final TextView mIdView;
         public final TextView mContentView;
-        public DummyItem mItem;
+        public Guest mItem;
 
         public ViewHolder(View view) {
             super(view);
