@@ -1,26 +1,37 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="no.westerdals.odeand.hotellapplication.HotellInfoFragment"
-    >
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    tools:context="no.westerdals.odeand.hotellapplication.HotellInfoFragment">
 
     <TextView
         android:textAppearance="@style/Theme.AppCompat.Light"
         android:shadowColor="@color/colorAccent"
-        android:layout_marginTop="100sp"
+        android:layout_alignParentTop="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/filler_text"
         android:textSize="@dimen/text_margin"
      />
 
+    <Button
+        android:id="@+id/button_show_street_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/show_as_street_view_btn"
+        android:layout_alignTop="@+id/map_view"
+        android:gravity="center_horizontal"/>
+
     <com.google.android.gms.maps.MapView
         android:id="@+id/map_view"
         android:layout_width="match_parent"
         android:layout_height="300sp"
-        android:layout_gravity="bottom"
+        android:layout_alignParentBottom="true"
+        map:cameraTargetLat="59.91365930021811"
+        map:cameraTargetLng="10.709168696822513"
+        map:cameraZoom="15"
         >
     </com.google.android.gms.maps.MapView>
 
-</FrameLayout>
+</RelativeLayout>

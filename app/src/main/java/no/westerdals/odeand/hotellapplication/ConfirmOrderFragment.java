@@ -65,8 +65,14 @@ public class ConfirmOrderFragment extends Fragment {
     }
 
     private void sendConfirmationEmail() {
-        MailSender mailSender = new MailSender(getContext(), guest.getEmail(), "Taxiorder Confirmation", guest.toString());
+        MailSender mailSender = new MailSender(getContext(), guest.getEmail(), "Taxiorder Confirmation", buildMessage());
         mailSender.execute();
+    }
+
+    private String buildMessage() {
+        return "Hello " + guest.getName() + "!\nA Taxi for " + edtNumberPassengers.getText().toString() +
+                " people has been ordered for you.\nIt will arrive " + edtDeparture.getText().toString() +
+                ".\nPlease contact the reception if you have questions.";
     }
 
 }
