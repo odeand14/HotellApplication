@@ -33,7 +33,6 @@ public class MailSender extends AsyncTask<Void, Void, Void> {
     @Override
     protected Void doInBackground(Void... params) {
 
-
         Properties properties = new Properties();
 
         properties.put("mail.smtp.host", "smtp.gmail.com");

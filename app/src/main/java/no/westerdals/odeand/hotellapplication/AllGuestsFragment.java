@@ -21,6 +21,10 @@ public class AllGuestsFragment extends Fragment {
     public AllGuestsFragment() {
     }
 
+    public static AllGuestsFragment newInstance() {
+
+        return new AllGuestsFragment();
+    }
 
 
     @Override

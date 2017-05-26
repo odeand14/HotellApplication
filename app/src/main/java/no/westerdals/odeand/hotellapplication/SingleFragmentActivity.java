@@ -71,7 +71,8 @@ public abstract class SingleFragmentActivity extends AppCompatActivity {
             transaction.commit();
 
         } else if (id == R.id.action_all_guests) {
-            transaction.replace(R.id.fragment_container, new AllGuestsFragment());
+
+            transaction.replace(R.id.fragment_container, AllGuestsFragment.newInstance());
             transaction.addToBackStack(null);
 
             transaction.commit();
