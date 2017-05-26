@@ -26,8 +26,9 @@ public class MyGuestRecyclerViewAdapter extends RecyclerView.Adapter<MyGuestRecy
 
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
+        String roomNumber = "Room: " + String.valueOf(mValues.get(position).getRoomNumber());
         holder.mItem = mValues.get(position);
-        holder.mIdView.setText((String.valueOf(mValues.get(position).getRoomNumber())));
+        holder.mIdView.setText(roomNumber);
         holder.mContentView.setText(mValues.get(position).toString());
 
     }

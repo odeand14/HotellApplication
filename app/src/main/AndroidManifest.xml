@@ -10,7 +10,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/taxi_logos"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -22,6 +22,7 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/title_activity_main"
+            android:screenOrientation="portrait"
             >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -30,10 +31,15 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".ConfirmOrderActivity">
+        <activity
+            android:name=".ConfirmOrderActivity"
+            android:screenOrientation="portrait">
         </activity>
 
-        <activity android:name=".ShowStreetViewActivity">
+        <activity
+            android:name=".ShowStreetViewActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
         </activity>
 
     </application>

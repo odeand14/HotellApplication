@@ -6,6 +6,7 @@
     android:fitsSystemWindows="true"
     tools:context="no.westerdals.odeand.hotellapplication.MainActivity"
     android:minHeight="?attr/actionBarSize"
+
     >
 
 </android.support.design.widget.CoordinatorLayout>

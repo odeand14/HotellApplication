@@ -48,6 +48,10 @@ public abstract class SingleFragmentActivity extends AppCompatActivity {
         return true;
     }
 
+    public void setActonBarTitle(String title) {
+        getSupportActionBar().setTitle(title);
+    }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 

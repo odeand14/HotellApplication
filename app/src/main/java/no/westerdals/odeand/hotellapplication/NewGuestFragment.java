@@ -26,8 +26,14 @@ public class NewGuestFragment extends Fragment {
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    public void onResume() {
+        ((SingleFragmentActivity) getActivity()).setActonBarTitle("New Guest");
+        super.onResume();
+    }
 
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        ((SingleFragmentActivity) getActivity()).setActonBarTitle("New Guest");
         super.onCreate(savedInstanceState);
     }
 

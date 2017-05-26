@@ -46,8 +46,11 @@ public class HotellInfoFragment extends Fragment implements OnMapReadyCallback {
         return new HotellInfoFragment();
     }
 
+
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        ((SingleFragmentActivity) getActivity()).setActonBarTitle("Hotel Info");
         super.onCreate(savedInstanceState);
     }
 
@@ -111,6 +114,7 @@ public class HotellInfoFragment extends Fragment implements OnMapReadyCallback {
 
     @Override
     public void onResume() {
+        ((SingleFragmentActivity) getActivity()).setActonBarTitle("Hotel Info");
         checkPlayServices();
         fragment.onResume();
         super.onResume();

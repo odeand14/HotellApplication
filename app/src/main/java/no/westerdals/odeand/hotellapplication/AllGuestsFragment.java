@@ -26,9 +26,15 @@ public class AllGuestsFragment extends Fragment {
         return new AllGuestsFragment();
     }
 
+    @Override
+    public void onResume() {
+        ((SingleFragmentActivity) getActivity()).setActonBarTitle("All Guests");
+        super.onResume();
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        ((SingleFragmentActivity) getActivity()).setActonBarTitle("All Guests");
         super.onCreate(savedInstanceState);
     }
 

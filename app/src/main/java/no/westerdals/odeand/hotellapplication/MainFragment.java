@@ -29,7 +29,14 @@ public class MainFragment extends Fragment {
     }
 
     @Override
+    public void onResume() {
+        ((SingleFragmentActivity) getActivity()).setActonBarTitle("Taxi booker");
+        super.onResume();
+    }
+
+    @Override
     public void onCreate(Bundle savedInstanceState) {
+        ((SingleFragmentActivity) getActivity()).setActonBarTitle("Taxi booker");
         super.onCreate(savedInstanceState);
     }
 
