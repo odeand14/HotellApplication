@@ -49,7 +49,9 @@ public abstract class SingleFragmentActivity extends AppCompatActivity {
     }
 
     public void setActonBarTitle(String title) {
-        getSupportActionBar().setTitle(title);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setTitle(title);
+        }
     }
 
     @Override

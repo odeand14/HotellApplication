@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,6 +19,7 @@ public class MainFragment extends Fragment {
     private String guestRoomNumber;
     private GuestsDataSource dataSource;
     private Guest guest;
+    private ImageView imageViewTop, imageViewBottom;
 
     public MainFragment() {
         // Required empty public constructor
@@ -47,6 +49,10 @@ public class MainFragment extends Fragment {
 
         btnSubmit = (Button) view.findViewById(R.id.btnSubmitRoomNumber);
         txtRoomNr = (TextView) view.findViewById(R.id.txtRoomNumber);
+        imageViewTop = (ImageView) view.findViewById(R.id.taxi_image_top);
+        imageViewBottom = (ImageView) view.findViewById(R.id.taxi_image_bottom);
+        imageViewTop.setImageResource(R.mipmap.taxi_squares);
+        imageViewBottom.setImageResource(R.mipmap.taxi_squares);
 
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override

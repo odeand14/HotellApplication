@@ -29,4 +29,5 @@
     <string name="submit_guest">Submit</string>
     <string name="cancel_guest">Cancel</string>
     <string name="show_as_street_view_btn">Show as Street View!</string>
+    <string name="taxi_image">Image of Taxi logo</string>
 </resources>

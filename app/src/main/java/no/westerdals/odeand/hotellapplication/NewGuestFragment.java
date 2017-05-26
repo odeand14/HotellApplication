@@ -53,30 +53,39 @@ public class NewGuestFragment extends Fragment {
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Guest guest = new Guest(
-                        txtName.getText().toString(),
-                        txtEmail.getText().toString(),
-                        1L,
-                        Long.parseLong(txtPhone.getText().toString()),
-                        Integer.parseInt(txtRoom.getText().toString()));
-
-                txtName.getText().clear();
-                txtEmail.getText().clear();
-                txtPhone.getText().clear();
-                txtRoom.getText().clear();
 
                 guestsDataSource = new GuestsDataSource(getContext());
                 guestsDataSource.open();
 
-                try {
-                    guestsDataSource.createGuest(guest);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                    Toast.makeText(getContext(), "Creation failed!", Toast.LENGTH_LONG).show();
+                Guest currentGuest = guestsDataSource.getGuest(Integer.parseInt(txtRoom.getText().toString()));
+                if (currentGuest == null) {
+
+                    Guest guest = new Guest(
+                            txtName.getText().toString(),
+                            txtEmail.getText().toString(),
+                            1L,
+                            Long.parseLong(txtPhone.getText().toString()),
+                            Integer.parseInt(txtRoom.getText().toString()));
+
+                    txtName.getText().clear();
+                    txtEmail.getText().clear();
+                    txtPhone.getText().clear();
+                    txtRoom.getText().clear();
+
+
+                    try {
+                        guestsDataSource.createGuest(guest);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                        Toast.makeText(getContext(), "Creation failed!", Toast.LENGTH_LONG).show();
+                    }
+
+                    Toast.makeText(getContext(), "Registered new Guest!", Toast.LENGTH_LONG).show();
+                    guestsDataSource.close();
+                } else {
+                    Toast.makeText(getContext(), "Room is occupied!", Toast.LENGTH_SHORT).show();
                 }
 
-                Toast.makeText(getContext(), "Registered new Guest!", Toast.LENGTH_LONG).show();
-                guestsDataSource.close();
             }
         });
 
