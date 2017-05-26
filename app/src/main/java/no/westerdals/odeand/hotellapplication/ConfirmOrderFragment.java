@@ -3,7 +3,6 @@ package no.westerdals.odeand.hotellapplication;
 // Created by Andreas Ødegaard on 23.05.2017.
 
 
-import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;

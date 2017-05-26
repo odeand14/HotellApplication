@@ -23,6 +23,16 @@ public class SQLiteHelper extends SQLiteOpenHelper {
                     COLUMN_NAME + " text not null, " + COLUMN_ROOMNUMBER + " integer, " +
                     COLUMN_EMAIL + " text not null, " + COLUMN_PHONENUMBER + " integer not null);";
 
+    private static final String DATABASE_POPULATE = "INSERT INTO " + TABLE_GUESTS +
+            "(" + COLUMN_NAME + ", " + COLUMN_EMAIL + ", " + COLUMN_PHONENUMBER + ", " + COLUMN_ROOMNUMBER +")" +
+            " VALUES ('Andreas Ødegaard', 'aodegaar@gmail.com', 45453077, 1), " +
+            "('Joban', 'odeand@westerdals.no', 45454545, 3), " +
+            "('Nils Trulsen', 'andreas.odegaard@outlook.com', 23423423, 6), " +
+            "('Kongen Harald', 'odeand14@student.westerdals.no', 12345678, 100), " +
+            "('Tor-Morten Grønli', 'tmg@westerdals.no', 12341234, 1337), " +
+            "('Lise Norman', 'odeand@westerdals.no', 97657832, 20), " +
+            "('Donald Duck', 'odeand@westerdals.no', 13131313, 13)";
+
     public SQLiteHelper (Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
@@ -31,11 +41,11 @@ public class SQLiteHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(DATABASE_CREATE);
+        db.execSQL(DATABASE_POPULATE);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        //TODO make possible to upgrade?
 
     }
 }
