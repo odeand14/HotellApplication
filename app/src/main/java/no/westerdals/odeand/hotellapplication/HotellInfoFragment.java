@@ -8,6 +8,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.view.InflateException;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,6 +36,7 @@ public class HotellInfoFragment extends Fragment implements OnMapReadyCallback {
     private Button mBtnShowAsStreetView;
     private SupportMapFragment fragment;
     private GoogleMap mMap;
+    private View view;
 
     public HotellInfoFragment() {
     }
@@ -76,10 +78,11 @@ public class HotellInfoFragment extends Fragment implements OnMapReadyCallback {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_hotell_info, container, false);
 
-        mBtnShowAsStreetView = (Button) view.findViewById(R.id.button_show_street_view);
 
+        if (view == null) {
+            view = inflater.inflate(R.layout.fragment_hotell_info, container, false);
+        }
 
         try {
             MapsInitializer.initialize(getActivity().getApplicationContext());
@@ -87,6 +90,7 @@ public class HotellInfoFragment extends Fragment implements OnMapReadyCallback {
             e.printStackTrace();
         }
 
+        mBtnShowAsStreetView = (Button) view.findViewById(R.id.button_show_street_view);
         mBtnShowAsStreetView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

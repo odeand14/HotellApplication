@@ -62,7 +62,7 @@ public class GuestsDataSource {
     public List<Guest> getAllGuests() {
         List<Guest> allGuests = new ArrayList<>();
         Cursor cursor = database.query(SQLiteHelper.TABLE_GUESTS, allColumns,
-                null, null, null, null, SQLiteHelper.COLUMN_ROOMNUMBER + " DESC ");
+                null, null, null, null, SQLiteHelper.COLUMN_ROOMNUMBER + " ASC ");
 
         cursor.moveToFirst();
         allGuests.add(cursorToGuest(cursor));

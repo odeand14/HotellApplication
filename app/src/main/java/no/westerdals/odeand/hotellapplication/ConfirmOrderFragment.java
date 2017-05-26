@@ -40,11 +40,6 @@ public class ConfirmOrderFragment extends Fragment {
         btnOrder = (Button) view.findViewById(R.id.button_confirm_order);
         timePicker = (TimePicker) view.findViewById(R.id.timePicker);
 
-        if (!Objects.equals(edtNumberPassengers.getText().toString(), "")) {
-            numberOfPassengers = edtNumberPassengers.getText().toString();
-        } else {
-            numberOfPassengers = "1";
-        }
 
 
         try {
@@ -58,8 +53,7 @@ public class ConfirmOrderFragment extends Fragment {
         btnCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), MainActivity.class);
-                startActivity(intent);
+                getActivity().finish();
             }
         });
 
@@ -83,6 +77,11 @@ public class ConfirmOrderFragment extends Fragment {
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     private String buildMessage() {
+        if (!Objects.equals(edtNumberPassengers.getText().toString(), "")) {
+            numberOfPassengers = edtNumberPassengers.getText().toString();
+        } else {
+            numberOfPassengers = "1";
+        }
         return "Hello " + guest.getName() + "!\nA Taxi for " + numberOfPassengers +
                 " people has been ordered for you.\nIt will arrive " + timePicker.getHour() + ":" + timePicker.getMinute() +
                 ".\nPlease contact the reception if you have questions.";
