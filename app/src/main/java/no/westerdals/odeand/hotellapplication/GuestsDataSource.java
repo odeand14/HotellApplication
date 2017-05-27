@@ -61,16 +61,18 @@ public class GuestsDataSource {
 
     public List<Guest> getAllGuests() {
         List<Guest> allGuests = new ArrayList<>();
-        Cursor cursor = database.query(SQLiteHelper.TABLE_GUESTS, allColumns,
-                null, null, null, null, SQLiteHelper.COLUMN_ROOMNUMBER + " ASC ");
-
-        cursor.moveToFirst();
-        allGuests.add(cursorToGuest(cursor));
-        while (cursor.moveToNext()) {
-            allGuests.add(cursorToGuest(cursor));
+        try (Cursor cursor = database.query(SQLiteHelper.TABLE_GUESTS, allColumns,
+                null, null, null, null, SQLiteHelper.COLUMN_ROOMNUMBER + " ASC ")) {
+            if (cursor.getCount() > 0) {
+                cursor.moveToFirst();
+                allGuests.add(cursorToGuest(cursor));
+                while (cursor.moveToNext()) {
+                    allGuests.add(cursorToGuest(cursor));
+                }
+                cursor.close();
+            }
+            return allGuests;
         }
-        cursor.close();
-        return allGuests;
     }
 
     public Guest getGuest(int roomNumber) {
