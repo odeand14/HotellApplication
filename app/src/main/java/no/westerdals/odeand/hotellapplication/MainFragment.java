@@ -22,7 +22,6 @@ public class MainFragment extends Fragment {
     private ImageView imageViewTop, imageViewBottom;
 
     public MainFragment() {
-        // Required empty public constructor
     }
 
     public static MainFragment newInstance() {

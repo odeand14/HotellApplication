@@ -40,7 +40,7 @@ public class ShowStreetViewFragment extends Fragment implements OnStreetViewPano
         if (savedInstanceState == null) {
             options.position(HOTEL);
         }
-        checkPlayServices();
+
         mStreetViewPanoramaView = new StreetViewPanoramaView(getContext(), options);
         getActivity().addContentView(mStreetViewPanoramaView,
                 new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
@@ -64,7 +64,6 @@ public class ShowStreetViewFragment extends Fragment implements OnStreetViewPano
     public void onResume() {
         mStreetViewPanoramaView.onResume();
         super.onResume();
-        checkPlayServices();
     }
 
     @Override
@@ -90,22 +89,6 @@ public class ShowStreetViewFragment extends Fragment implements OnStreetViewPano
         super.onLowMemory();
     }
 
-    private final static int PLAY_SERVICES_RESOLUTION_REQUEST = 1000;
-
-    private boolean checkPlayServices() {
-        GoogleApiAvailability googleAPI = GoogleApiAvailability.getInstance();
-        int result = googleAPI.isGooglePlayServicesAvailable(getContext());
-        if (result != ConnectionResult.SUCCESS) {
-            if (googleAPI.isUserResolvableError(result)) {
-                googleAPI.getErrorDialog(getActivity(), result,
-                        PLAY_SERVICES_RESOLUTION_REQUEST).show();
-            }
-
-            return false;
-        }
-
-        return true;
-    }
 
     @Override
     public void onStreetViewPanoramaReady(StreetViewPanorama streetViewPanorama) {

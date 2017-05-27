@@ -82,6 +82,7 @@ public class NewGuestFragment extends Fragment {
 
                     Toast.makeText(getContext(), "Registered new Guest!", Toast.LENGTH_LONG).show();
                     guestsDataSource.close();
+                    getActivity().finish();
                 } else {
                     Toast.makeText(getContext(), "Room is occupied!", Toast.LENGTH_SHORT).show();
                 }
